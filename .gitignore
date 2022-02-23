@@ -1,0 +1,10 @@
+lesson/__pycache__/settings.cpython-38.pyc
+lesson/__pycache__/urls.cpython-38.pyc
+lesson/settings.py
+polls/__pycache__/models.cpython-38.pyc
+polls/__pycache__/models.cpython-38.pyc
+polls/__pycache__/urls.cpython-38.pyc
+polls/templates/polls/detail.html
+polls/__pycache__/tests.cpython-38.pyc
+polls/migrations/__pycache__/0002_author_article.cpython-38.pyc
+polls/migrations/__pycache__/0003_delete_article_delete_author.cpython-38.pyc

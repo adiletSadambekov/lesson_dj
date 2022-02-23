@@ -1,0 +1,10 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+    <div class="logged_out">
+        <h2>You are out in site</h2>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+
+{% endblock content %}

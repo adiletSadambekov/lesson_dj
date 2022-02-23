@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'polls/base.html' %}
+    {% block content %}
     <h1>Voting</h1>
     <ul>
         {% if error_message %} <p><strong>{{ error_message }}</strong></p>{% endif %}
         {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text }} <p>quantity votes: {{ choice.votes }}</p></li>
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} </p></li>
+        {% endfor %}
     </ul>
-</body>
-</html>
+    {% endblock content %}

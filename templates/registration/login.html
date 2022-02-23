@@ -1,0 +1,21 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<div class="form">
+    <div class="form_login">
+        <h1>Login</h1>
+        <form method="post">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_p }}
+                    <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="Submit"></td>
+                    </tr>
+                    <p><a href="{% url 'password_reset' %}">Forgot you password?</a>
+                </table>
+            </form>
+    </div>
+</div>   
+
+{% endblock content %}

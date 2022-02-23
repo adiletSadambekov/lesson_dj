@@ -1,0 +1,14 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+        <h2>{{ user }}</h2>
+        <div class="form">
+            <form action="" method="post">
+                {% csrf_token %}
+                {% for i in form %}
+                <p>{{ i.label }} {{ i }}
+                {% endfor %}
+                <p><button type="submit">Submit for review</button>
+            </form>
+        </div>
+        </form>
+{% endblock content %}

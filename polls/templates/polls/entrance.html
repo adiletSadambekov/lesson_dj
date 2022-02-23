@@ -1,0 +1,17 @@
+{% extends 'polls/base.html' %}
+
+    {% block content %}
+        <div class="entrance">
+            <div class="signup">
+                <a href="#">Sign up</a>
+            </div>
+
+            <div class="login">
+                <a href=" {% url 'login' %} ">Login</a>
+            </div>
+
+            <div class="register">
+                <a href="#">Register</a>
+            </div>
+        </div>
+    {% endblock content %}

@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <form action="{% url 'polls:vote question.id %}">
+{% extends 'polls/base.html' %}
+    {% block content %}
+
+    {% if user.is_authenticated %}
+    <form action="{% url 'polls:vote' question.id %}" method="POST">
         {% csrf_token %}
         <fieldset>
             <legend><h1>{{ question.question_text }}</h1></legend>
-            {% if error_message %} <p>{{ error_message }}</p>{% error_message %}
+            {% if error_message %} <p>{{ error_message }}</p>{% endif %}
             {% for choice in question.choice_set.all %}
             <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" >
             <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
@@ -17,5 +14,10 @@
         </fieldset>
         <input type="submit" value="Vote">
     </form>
-</body>
-</html>
+    {% else %}
+    <div>
+        <h1>To polls in segment first need authenticated</h1>
+        <p><a href="{% url 'login' %}?next={{ request.path }}">Login</a></p>
+    </div>
+    {% endif %}
+    {% endblock content %}

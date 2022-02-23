@@ -1,0 +1,7 @@
+body #index_content {
+    background: url(image/back.jpg) no-repeat;
+}
+
+#index_content li a {
+    color: green;
+}

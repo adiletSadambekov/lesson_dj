@@ -1,0 +1,11 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+
+    <div class="card_user">
+        <div class="avatar_user">This is plaece for a user's a avatar</div>
+        <div class="data_user">This is plaece for user's data</div>
+        <h1><a href="{% url 'users:add_article' user.id %}">add post</a></h1>
+    </div>
+
+{% endblock content %}
