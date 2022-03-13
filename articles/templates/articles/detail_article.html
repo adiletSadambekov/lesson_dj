@@ -1,0 +1,19 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<h1>Detail article</h1>
+<div>
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.text }}</p>
+    <form action="">
+        {% csrf_token %}
+        <fieldset>
+        <input type="radio" id="like" name="like">
+        <label for="like">Like</label>
+        <input type="radio" id="dislike" name="dislike">
+        <label for="dislike">Dislike</label>
+        </fieldset>
+    </form>
+    <p>counts look -- {{ article.looks }}</p>
+</div>
+{% endblock content %}
