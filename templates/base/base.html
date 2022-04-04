@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %} <title>The thought</title> {% endblock %}
+    <link rel="stylesheet" href="{% static 'polls/css/style.css' %}" type="text/css">
+    {% load static %}
+</head>
+<body>
+    <header>
+        <div class="category"><a href="{% url 'polls:index' %}">This is polls</a></div>
+        <div class="category"><a href="#">This is category</a></div>
+        <div class="category"><a href="{% url 'users:register' %}">register</a></div>
+        <div class="category"><a href="{% url 'login' %}">Login in site</a></div>
+    </header>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

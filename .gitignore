@@ -1,5 +1,5 @@
 lesson/settings.py
 polls/templates/polls/detail.html
 **.pyc
-**/__pycache__
-
+**/__pycache__/
+cpython-38.pyc

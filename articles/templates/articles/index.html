@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div>
+    {% for art in articles %}
+    <div class="article-index">
+        <h3>{{ art.author }}</h3>
+        <p>{{ art.text }}</p><br>
+        {{ art.pube_date }}
+    </div>
+     {% endfor %}
+</div>
+{% endblock content %}

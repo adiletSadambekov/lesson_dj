@@ -19,5 +19,3 @@ class RegisterUserView(CreateView):
     template_name = 'registration/register.html'
     success_url = '/acconts/login/'
     form_class = RegisterUsers
-
-

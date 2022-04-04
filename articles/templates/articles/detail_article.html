@@ -5,13 +5,11 @@
 <div>
     <h2>{{ article.title }}</h2>
     <p>{{ article.text }}</p>
+    <p>{{ article.author }}</p>
     <form action="">
         {% csrf_token %}
         <fieldset>
-        <input type="radio" id="like" name="like">
-        <label for="like">Like</label>
-        <input type="radio" id="dislike" name="dislike">
-        <label for="dislike">Dislike</label>
+            <button>{{ form_like }}</button>
         </fieldset>
     </form>
     <p>counts look -- {{ article.looks }}</p>

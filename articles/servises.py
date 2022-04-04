@@ -1,6 +1,6 @@
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
-from .models import Article, Like
+from .models import Like
 
 def add_like(article, user):
     article_type = ContentType.objects.get_for_model(article)
@@ -21,8 +21,6 @@ def is_fan(article, user) -> bool:
     return like.exists()
 
 
-def get_fnas(article):
+def get_fans(article):
     article_type = ContentType.objects.get_for_model(article)
-    return User.objects.filter(likes__content_type=article_type, likes__object_id=article.id)
-
-
+    return User.objects.filter(likes__content_type=article_type, likes__article_id=article.id)
